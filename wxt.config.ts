@@ -5,11 +5,11 @@ export default defineConfig({
   modules: ["@wxt-dev/module-vue"],
   srcDir: "src",
   manifest: {
-    name: "Improved Github Dashboard",
+    name: "Better Repo Filter",
     description:
-      "A browser extension that allows you to filter your repositories based on its list",
+      "A browser extension that allows you to filter your repositories based on its list in github",
     version: "1.0.0",
     permissions: ["storage", "scripting"],
-    host_permissions: ["https://github.com/*"],
+    host_permissions: ["https://github.com/"],
   },
 });

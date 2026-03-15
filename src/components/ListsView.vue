@@ -85,6 +85,7 @@ function clearAll() {
             type="checkbox"
             :checked="selectedListSlugs.size === 0"
             @change="clearAll"
+            class="checkbox"
           />
           <span>No Filter (show all)</span>
         </label>
@@ -119,6 +120,7 @@ function clearAll() {
   border-radius: 6px;
   padding: 12px;
 }
+
 .list-item {
   display: flex;
   align-items: center;
@@ -126,6 +128,31 @@ function clearAll() {
   margin: 6px 0;
   cursor: pointer;
   color: var(--text-primary);
+}
+
+/* Style 3: Checkmark */
+.checkmark-style {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.checkmark-style:hover {
+  background: #f8fafc;
+}
+
+.checkmark-style .check-box {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
 }
 .clear-all {
   border-bottom: 1px solid var(--border-color);

@@ -1,16 +1,45 @@
+import ListsView from "@/components/ListsView.vue";
 import { createLogger } from "@/utils/logger";
 import { createApp } from "vue";
 import { createIntegratedUi } from "wxt/utils/content-script-ui/integrated";
 import { defineContentScript } from "wxt/utils/define-content-script";
 import "../assets/theme.css";
-import App from "./popup/App.vue";
 
 const logger = createLogger("content.ts");
 
 export default defineContentScript({
-  matches: ["https://github.com/*"],
+  matches: ["https://github.com/"],
   async main(ctx) {
     logger.debug("Content script started on GitHub page");
+
+    function getGitHubTheme(): "light" | "dark" {
+      const html = document.documentElement;
+      const colorMode = html.getAttribute("data-color-mode");
+      if (colorMode === "light" || colorMode === "dark") {
+        return colorMode;
+      }
+      // Fallback
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    // Store initial theme
+    const theme = getGitHubTheme();
+    logger.debug(`Setting initial theme in storage: ${theme}`);
+    await browser.storage.local.set({ githubTheme: theme });
+
+    // Watch for theme changes (if user toggles while page is open)
+    const themeObserver = new MutationObserver(() => {
+      const newTheme = getGitHubTheme();
+      logger.debug(`Theme changed to ${newTheme}, updating storage`);
+      browser.storage.local.set({ githubTheme: newTheme });
+    });
+
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-color-mode"],
+    });
 
     let allowedRepos: string[] = [];
 
@@ -121,7 +150,7 @@ export default defineContentScript({
         `;
         container.classList.add("my-extension-floating-panel");
 
-        const app = createApp(App);
+        const app = createApp(ListsView);
         app.mount(container);
         return app;
       },

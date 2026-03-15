@@ -62,13 +62,10 @@ function handleSave() {
 <style scoped>
 .github-extension-panel {
   background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
   padding: 16px;
   font-family: var(--font-mono);
   font-size: var(--font-base);
   color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
   max-width: 400px;
   margin: 0 auto;
 }
