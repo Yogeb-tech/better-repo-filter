@@ -2,7 +2,11 @@ import { defineConfig } from "wxt";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
-  modules: ["@wxt-dev/module-vue"],
+  modules: ["@wxt-dev/module-vue", "@wxt-dev/auto-icons"],
+  autoIcons: {
+    baseIconPath: "assets/icon.svg",
+    sizes: [16, 32, 48, 96, 128, 256],
+  },
   srcDir: "src",
   manifest: {
     name: "Better Repo Filter",
