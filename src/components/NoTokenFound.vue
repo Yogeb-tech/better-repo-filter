@@ -15,7 +15,8 @@ const { token: error } = tokenState;
       >
         Generate a token
       </a>
-      with <code>repo</code> and <code>read:user</code> scopes.
+      with <code>repo</code> and <code>read:user</code> scopes. Then reload the
+      page.
     </p>
   </div>
 </template>

@@ -81,7 +81,7 @@ function clearAll() {
 
     <div v-else-if="(!githubService && !loading) || !user">
       <NoTokenFound />
-      <p>Input this token into the browser extension. Then reload the page</p>
+      <p>Input the token into the browser extension.</p>
     </div>
 
     <div v-else class="filter-options">

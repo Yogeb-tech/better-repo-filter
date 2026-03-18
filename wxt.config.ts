@@ -15,5 +15,12 @@ export default defineConfig({
     version: "1.0.0",
     permissions: ["storage", "scripting"],
     host_permissions: ["https://github.com/"],
+
+    // Firefox Storage API support
+    browser_specific_settings: {
+      gecko: {
+        id: "better-repo-filter@local-dev.com",
+      },
+    },
   },
 });

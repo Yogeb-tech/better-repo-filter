@@ -1,4 +1,3 @@
-<!-- components/ClearToken.vue -->
 <script lang="ts" setup>
 import { clearToken } from "@/utils/token";
 import { tokenState } from "@/utils/token";
