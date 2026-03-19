@@ -119,6 +119,22 @@ function clearAll() {
 </template>
 
 <style scoped>
+.filter-options {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Make the scrollbar look a bit cleaner on modern browsers */
+.filter-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-options::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
 .lists-panel {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
