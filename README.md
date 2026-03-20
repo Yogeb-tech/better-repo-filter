@@ -4,10 +4,8 @@ Browser extension to declutter GitHub by filtering your activity feed using GitH
 
 ## Key Dependencies
 
-- `@hk/github-graphql: npm:@jsr/hk__github-graphql@^0.2.9`
 - `@iconify/vue: ^5.0.0`
 - `@octokit/rest: ^22.0.1`
-- `@picocss/pico: ^2.1.1`
 - `vue: ^3.5.27`
 
 ## Run Commands
