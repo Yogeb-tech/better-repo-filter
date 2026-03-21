@@ -24,7 +24,7 @@ export default defineConfig({
         data_collection_permissions: {
           description:
             "This extension stores a GitHub personal access token locally to fetch the user's starred repositories and lists. No data is sent to third parties.",
-          required: ["authenticationInfo", "bookmarksInfo", "websiteActivity"],
+          required: ["authenticationInfo"],
         },
       } as any,
     },
