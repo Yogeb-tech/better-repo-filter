@@ -12,7 +12,7 @@ export default defineConfig({
     name: "Better Repo Filter",
     description:
       "A browser extension that allows you to filter your repositories based on its list in github",
-    version: "1.0.1",
+    version: "1.0.0",
     permissions: ["storage"],
     host_permissions: ["https://github.com/", "https://api.github.com/*"],
 

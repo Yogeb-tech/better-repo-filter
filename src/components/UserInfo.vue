@@ -3,6 +3,7 @@ import { loadToken, saveToken, tokenState } from "@/utils/token";
 import { onMounted, ref } from "vue";
 import ClearToken from "./ClearToken.vue";
 import { Icon } from "@iconify/vue";
+import { CONSTANTS } from "@/constants/constants";
 
 const { loading, error, user, githubService } = tokenState;
 const inputToken = ref("");
@@ -70,7 +71,7 @@ function handleSave() {
         <p v-if="error" class="error">ERROR: {{ error }}</p>
         <p class="hint">
           <a
-            href="https://github.com/settings/tokens"
+            :href="CONSTANTS.GITHUB_GENERATE_KEY"
             target="_blank"
             rel="noopener"
           >

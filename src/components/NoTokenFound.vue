@@ -1,19 +1,12 @@
-<script lang="ts" setup>
-import { tokenState } from "@/utils/token";
-
-const { token: error } = tokenState;
+<script setup lang="ts">
+import { CONSTANTS } from "@/constants/constants";
 </script>
-
 <template>
   <div class="github-extension-panel">
     <p>No GitHub token found.</p>
     <p>
-      <a
-        href="https://github.com/settings/tokens"
-        target="_blank"
-        rel="noopener"
-      >
-        Generate a token
+      <a :href="CONSTANTS.GITHUB_GENERATE_KEY"
+        >} target="_blank" rel="noopener" > Generate a token
       </a>
       with <code>repo</code> and <code>read:user</code> scopes. Then reload the
       page.
