@@ -245,24 +245,28 @@ button:focus-visible {
 
 /* ===== INJECTED UI IN WWW.GITHUB.COM ===== */
 .my-extension-injected-ui {
-  position: absolute;
-  top: max(31rem, 25vh);
-  right: clamp(1.25rem, 8vw, 9.375rem);
+  position: absolute; 
+  top: 35rem; 
+  left: calc(50% + 485px);
+  right: auto; 
   z-index: 1001;
   padding: 0;
-  width: clamp(15rem, 20vw, 19.375rem);
-    right: 0.3s ease,
-    width: 0.3s ease;
+  width: clamp(15rem, 18vw, 24rem);
 }
 
-@media (max-width: 1500px) {
+/* 3. LAPTOP ADJUSTMENT (Screens narrower than 1600px) */
+/* On laptops, the "center + px" trick would push it off-screen.
+   We switch back to standard right-edge anchoring here. */
+@media (max-width: 1600px) {
   .my-extension-injected-ui {
-    right: 2vw;
+    left: auto;
+    right: 4vw;
     width: 18vw;
     min-width: 15rem;
   }
 }
 
+/* 4. HIDE ON SMALL SCREENS */
 @media (max-width: 1250px) {
   .my-extension-injected-ui {
     display: none;

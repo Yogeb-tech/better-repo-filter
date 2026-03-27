@@ -4,6 +4,7 @@ import { onMounted, ref } from "vue";
 import ClearToken from "./ClearToken.vue";
 import { Icon } from "@iconify/vue";
 import { CONSTANTS } from "@/constants/constants";
+import NoTokenFound from "./NoTokenFound.vue";
 
 const { loading, error, user, githubService } = tokenState;
 const inputToken = ref("");
@@ -70,14 +71,7 @@ function handleSave() {
         </button>
         <p v-if="error" class="error">ERROR: {{ error }}</p>
         <p class="hint">
-          <a
-            :href="CONSTANTS.GITHUB_GENERATE_KEY"
-            target="_blank"
-            rel="noopener"
-          >
-            Generate a token
-          </a>
-          with <code>repo</code> and <code>read:user</code> scopes.
+         <NoTokenFound/> 
         </p>
       </div>
 

@@ -9,10 +9,10 @@ export default defineConfig({
   },
   srcDir: "src",
   manifest: {
-    name: "Better Repo Filter",
+    name: "Github Lists Filter",
     description:
       "A browser extension that allows you to filter your repositories based on its list in github",
-    version: "1.0.0",
+    version: "1.0.3",
     permissions: ["storage"],
     host_permissions: ["https://github.com/", "https://api.github.com/*"],
 

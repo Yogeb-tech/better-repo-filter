@@ -5,9 +5,7 @@ import { CONSTANTS } from "@/constants/constants";
   <div class="github-extension-panel">
     <p>No GitHub token found.</p>
     <p>
-      <a :href="CONSTANTS.GITHUB_GENERATE_KEY"
-        >} target="_blank" rel="noopener" > Generate a token
-      </a>
+      <a :href="CONSTANTS.GITHUB_GENERATE_KEY" rel="noopener" target="_blank">Generate a token</a>
       with <code>repo</code> and <code>read:user</code> scopes. Then reload the
       page.
     </p>
