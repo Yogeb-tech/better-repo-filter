@@ -1,4 +1,4 @@
-# Better Repo Filter
+# Github Lists Filter
 
 Browser extension to declutter GitHub by filtering your activity feed using GitHub Lists. Built with [WXT](https://wxt.dev/), [TypeScript](https://www.typescriptlang.org/), and [Vue.js](https://vuejs.org/).
 
